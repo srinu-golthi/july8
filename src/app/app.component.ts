@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Note} from './note';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'GoogleKeep';
+  note:Note=new Note();
+  noteList:Array<Note>=[];
+  takeNotes()
+  {
+    //console.log(this.note);
+    //this.note= new Note();
+    this.noteList.push(this.note);
+    this.note=new Note();
+    
+  }
+
 }
+
